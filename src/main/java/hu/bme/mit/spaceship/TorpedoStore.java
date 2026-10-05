@@ -31,6 +31,7 @@ public class TorpedoStore {
   }
 
   public boolean fire(int numberOfTorpedos){
+    // throw exeption if numberOfTorpedos invalid
     if(numberOfTorpedos < 1 || numberOfTorpedos > this.torpedoCount){
       throw new IllegalArgumentException("numberOfTorpedos");
     }
@@ -42,6 +43,7 @@ public class TorpedoStore {
 
     if (r >= FAILURE_RATE) {
       // successful firing
+      //simplify equation
       this.torpedoCount =this.torpedoCount - numberOfTorpedos;
       success = true;
     } else {
